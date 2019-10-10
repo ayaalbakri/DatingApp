@@ -1,0 +1,28 @@
+<form  #registerForm="ngForm" (submit)="register()">
+  <h2 class="text-center text-primary">Sign Up</h2>
+  <hr>
+  <div class="form-group">
+    <input type="email" class="form-control"  requird name='username' [(ngModel)]="model.userName" placeholder="enter your name">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control"  requird name='email' [(ngModel)]="model.email" placeholder="enter your email">
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control"  requird name='password' [(ngModel)]="model.password" placeholder="enter your password">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control"  requird name='confirmPassword' [(ngModel)]="model.confirmPassword" placeholder="confirm password">
+  </div>
+  <div class="form-group">
+    <label for="sel1">Select list:</label>
+    <select class="form-control">
+      <option *ngFor="let value of valuesFormHome" [value]='value'>{{value.name}}</option>
+    </select>
+  </div>
+  <div class="form-group text-center">
+    <button class="btn btn-success" type="submit"  [hidden]="registerForm.invalid">Register</button>
+    <button class="btn btn-default" type="button" (click)= 'cancel()'>Cancel</button>
+  </div>
+  
+</form>
